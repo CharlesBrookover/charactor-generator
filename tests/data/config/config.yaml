@@ -1,0 +1,8 @@
+paths:
+  templates: '/templates'
+  src: '/src'
+databases:
+  db1:
+    host: 'db1'
+  db2:
+    host: 'db2'

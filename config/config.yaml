@@ -1,0 +1,6 @@
+paths:
+  cache: '/tmp/cache'
+  logs: '/tmp/logs'
+  templates: '/templates'
+  databases: '/resources/db'
+databases:

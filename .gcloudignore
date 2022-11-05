@@ -1,5 +1,6 @@
-/cache/
-/config/development/
+### Skip the Apache files, since those are for dev only
+public/.htaccess
+.htaccess
 
 ### Composer template
 composer.phar
