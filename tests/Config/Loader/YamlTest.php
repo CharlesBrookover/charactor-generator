@@ -14,14 +14,13 @@ declare(strict_types=1);
 namespace Landfill\Tests\Config\Loader;
 
 use Landfill\Config\Exception\InvalidFileException;
-use Landfill\Config\Exception\InvalidTypeException;
 use Landfill\Config\Loader\Yaml;
 use PHPUnit\Framework\TestCase;
 
 class YamlTest extends TestCase
 {
 
-    private string $yamlFile = TEST_PATH . '/data/config/config.yaml';
+    private string $yamlFile    = TEST_PATH . '/data/config/config.yaml';
     private string $badYamlFile = TEST_PATH . '/data/config/badYaml.yaml';
 
     public function testParseFile()
@@ -37,10 +36,10 @@ class YamlTest extends TestCase
         $this->assertArrayHasKey('databases', $data);
     }
 
-    public function testExceptions() {
+    public function testExceptions()
+    {
         $this->expectException(InvalidFileException::class);
         $p = new Yaml($this->badYamlFile);
         $p->parseFile();
-
     }
 }

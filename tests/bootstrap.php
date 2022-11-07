@@ -12,3 +12,4 @@ declare(strict_types=1);
  */
 
 defined('TEST_PATH') || define('TEST_PATH', realpath(dirname(__FILE__)));
+defined('TMP_PATH') || define('TMP_PATH', realpath(TEST_PATH . '/../tmp'));
