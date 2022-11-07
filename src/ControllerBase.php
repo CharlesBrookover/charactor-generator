@@ -13,7 +13,7 @@ declare(strict_types=1);
 
 namespace Landfill;
 
-use PHLAK\Config\Config;
+use Landfill\Config\Config;
 use Psr\Container\ContainerInterface;
 use Slim\Views\Twig;
 
