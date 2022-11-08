@@ -1,0 +1,33 @@
+<div class="modal fade" tabindex="-1" id="modalSignin" data-bs-backdrop="static">
+    <di class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Sign In</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <form action="{{ url_for('signin') }}" method="post">
+                        <div class="mb-2">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" id="email" />
+                        </div>
+                        <div class="mb-2">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control" id="password" />
+                        </div>
+                        <div class="mb-2">
+                            <button type="submit" class="btn btn-primary">Sign In</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="mb-3">
+                    Sign in with: <span class="h3">Google</span> <span class="h3">Facebook</span>
+                </div>
+                <div>
+                    Register account? <a href="#">Register</a>
+                </div>
+            </div>
+        </div>
+    </di>
+</div>

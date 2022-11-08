@@ -24,4 +24,9 @@ class Main extends ControllerBase
         return $this->view->render($response, 'main/home.twig');
     }
 
+    public function signin(ServerRequestInterface $request, ResponseInterface $response)
+    : ResponseInterface {
+        // Perform Signin
+        return $this->view->render($response, 'main/home.twig', ['user' => true]);
+    }
 }

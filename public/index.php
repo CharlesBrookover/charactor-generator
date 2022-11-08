@@ -12,8 +12,8 @@ declare(strict_types=1);
  * @version 0.0.1
  */
 
+use DI\Bridge\Slim\Bridge;
 use DI\ContainerBuilder;
-use Landfill\Controller\Main;
 use Slim\Views\TwigMiddleware;
 
 defined('PROJECT_ROOT') or define('PROJECT_ROOT', realpath(dirname(__FILE__) . '/../'));
@@ -29,9 +29,10 @@ $builder = new ContainerBuilder();
 $builder->addDefinitions($containerDefinitions);
 
 // Slim App
-$app = \DI\Bridge\Slim\Bridge::create($builder->build());
+$app = Bridge::create($builder->build());
 
 // Middleware
+$app->addBodyParsingMiddleware();
 $app->addRoutingMiddleware();
 $app->add(TwigMiddleware::createFromContainer($app));
 $app->addErrorMiddleware(true, true, true);

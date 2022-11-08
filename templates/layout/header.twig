@@ -78,11 +78,16 @@
                             </li>
                             <li><a href="#" class="dropdown-item">Sign Out</a></li>
                         {% else %}
-                            <li><a href="#" class="dropdown-item">Sign In</a></li>
+                            <li>
+                                <button class="dropdown-item" type="button" data-bs-toggle="modal"
+                                        data-bs-target="#modalSignin">Sign In
+                                </button>
+                            </li>
                         {% endif %}
                     </ul>
                 </div>
             </div>
         </nav>
     {% endblock %}
+    {% include 'components/signin.twig' %}
 </header>

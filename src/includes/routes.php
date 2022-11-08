@@ -17,3 +17,5 @@ declare(strict_types=1);
 use Landfill\Controller\Main;
 
 $app->get('/', Main::class . ':home');
+$app->post('/signin', Main::class . ':signin')
+    ->setName('signin');

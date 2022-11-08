@@ -19,7 +19,7 @@ $containerDefinitions = [
         ->constructor(PROJECT_ROOT . '/config/config.yaml'),
     Twig::class   => function (Config $config) {
         return Twig::create(PROJECT_ROOT . $config->get('paths.templates', '/'),
-                            ['cache' => PROJECT_ROOT . '/tmp/cache/', 'debug' => true]);
+                            ['cache' => PROJECT_ROOT . '/tmp/cache/', 'auto_reload' => true, 'debug' => true]);
     },
 
     ##### Aliases
