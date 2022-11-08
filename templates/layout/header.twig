@@ -1,0 +1,88 @@
+<header>
+    {% block header %}
+        {#         <nav class="navbar"> #}
+        {#             <div class="container-fluid"> #}
+        {#                 <a class="navbar-brand" href="/"> #}
+        {#                     <i class="fa-brands fa-d-and-d fa-fw fa-2xl"></i> #}
+        {#                     Character Generator #}
+        {#                 </a> #}
+        {#                 <div class="nav justify-content-start"> #}
+        {#                     <a class="nav-link" href="#">Characters</a> #}
+        {#                     <a class="nav-link" href="#">Data</a> #}
+        {#                     <a class="nav-link" href="#">Saved</a> #}
+        {#                 </div> #}
+        {#                 {% if user is defined %} #}
+        {#                     <div class="navbar-text">Welcome, {{ user.fullName ?? 'No User' }}</div> #}
+        {#                 {% endif %} #}
+        {#                 <div class="dropdown"> #}
+        {#                     <button type="button" class="btn btn-text dropdown-toggle" data-bs-toggle="dropdown"> #}
+        {#                         <i class="fa-regular fa-circle-user fa-fw fa-2xl"></i> #}
+        {#                     </button> #}
+        {#                     <ul class="dropdown-menu dropdown-menu-end"> #}
+        {#                         {% if user is defined %} #}
+        {#                             <li><a class="dropdown-item" href="pref.php">Preferences</a></li> #}
+        {#                             <li> #}
+        {#                                 <hr class="dropdown-divider" /> #}
+        {#                             </li> #}
+        {#                             <li><a class="dropdown-item" href="index.php?signout=1">Sign Out</a></li> #}
+        {#                         {% else %} #}
+        {#                             <li><a href="#" class="dropdown-item">Sign In</a></li> #}
+        {#                         {% endif %} #}
+        {#                     </ul> #}
+        {#                 </div> #}
+        {#             </div> #}
+        {#         </nav> #}
+        <nav class="navbar navbar-expand-lg bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <i class="fa-brands fa-d-and-d fa-fw fa-2xl"></i>
+                    <span class="h3">Character Generator</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav"
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse" id="nav">
+                    <div class="navbar-nav me-auto">
+                        <a class="nav-link" href="#">Characters</a>
+                        <a class="nav-link" href="#">Sources</a>
+                        <a class="nav-link" href="#">Custom</a>
+                        <hr>
+                        <a class="nav-link d-lg-none">Sign In</a>
+                    </div>
+                </div>
+                <div class="dropdown d-none d-lg-flex">
+                    <button type="button" class="btn btn-text dropdown-toggle" data-bs-toggle="dropdown">
+                        <span class="text-{% if user is defined %}primary{% else %}danger{% endif %}">
+                            <i class="fa-regular fa-circle-user fa-fw fa-2xl"></i>
+                        </span>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li>
+                            <h5 class="dropdown-header">
+                                {% if user is not defined %}
+                                    Please Sign In
+                                {% else %}
+                                    Welcome, User
+                                {% endif %}
+                            </h5>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider" />
+                        </li>
+                        {% if user is defined %}
+                            <li><a href="#" class="dropdown-item">Saved</a></li>
+                            <li><a href="#" class="dropdown-item">Preferences</a></li>
+                            <li>
+                                <hr class="dropdown-divider" />
+                            </li>
+                            <li><a href="#" class="dropdown-item">Sign Out</a></li>
+                        {% else %}
+                            <li><a href="#" class="dropdown-item">Sign In</a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    {% endblock %}
+</header>

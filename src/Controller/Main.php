@@ -21,7 +21,7 @@ class Main extends ControllerBase
 {
     public function home(ServerRequestInterface $request, ResponseInterface $response, array $args = [])
     : ResponseInterface {
-        return $this->view->render($response, 'main/home.html.twig');
+        return $this->view->render($response, 'main/home.twig');
     }
 
 }
